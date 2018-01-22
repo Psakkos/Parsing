@@ -46,3 +46,20 @@ function statesWon(array, candidate, state);{
     }
   }
 }
+
+//6th dash
+function percentDifference(array){
+  let temp= Math.abs(array[0].obamapercent- array[0].romneypercent);
+  for(x=1; x<array.length; x++){
+    if(array[x].fips==0){
+      null
+    }
+    else if(Math.abs(array[x].obamapercent- array[x].romneypercent)>=temp){
+        Math.abs(array[x].obamapercent- array[x].romneypercent)=temp;
+    }
+    else if(Math.abs(array[x].obamapercent- array[x].romneypercent)<temp){
+      null
+    }
+  }
+return temp;
+}
