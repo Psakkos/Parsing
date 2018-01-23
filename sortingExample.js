@@ -2,14 +2,14 @@
 
 //For sorting a property in a object that is a number, use this idea.  It is assumed that a and b are objects of the same type; this way the dot notation works out.
 
-thegivenarray.sort(function(a,b){
+array.sort(function(a,b){
   return a.property - b.property
 });
 
 
 //For sorting a property in an object that is a string, use this idea.  It is assumed that a and b are strings, but we cannot assume what case they are in.
 
-thegivenarray.sort(function(a,b){
+array.sort(function(a,b){
   let wordA = a.property.toLowerCase();
   let wordB = b.property.toLowerCase();
 

@@ -27,8 +27,19 @@ function percentDifference(array, percent){
   return statePercents;
 }
 //4th dash
-function totalVotes(state){
-  sort.insertionSort(list,property);
+function totalVotes(array, stateAbbreviation){
+  let givenState= [];
+  for (let x=0; x<array.length; x++;){
+    if(array[x].state= stateAbbreviation && array[x].fips !== 0){
+        givenState.push(array[x])
+    }
+    else{
+        continue;
+    }
+  }
+  givenState.sort(function(a,b)){
+    return a.obamaVote + a.romneyVote-(b.obamaVote+ a.romneyVote);
+    }
 }
 //5th
 function statesWon(array, candidate, state);{
@@ -49,17 +60,38 @@ function statesWon(array, candidate, state);{
 
 //6th dash
 function percentDifference(array){
-  let temp= Math.abs(array[0].obamapercent- array[0].romneypercent);
-  for(x=1; x<array.length; x++){
+  let temp= Math.abs(array[0].obamaPercent- array[0].romneyPercent);
+  let state= array[0].state;
+  for(let x=1; x<array.length; x++){
     if(array[x].fips==0){
-      null
+      continue;
     }
-    else if(Math.abs(array[x].obamapercent- array[x].romneypercent)>=temp){
-        Math.abs(array[x].obamapercent- array[x].romneypercent)=temp;
+    else if(Math.abs(array[x].obamaPercent- array[x].romneyPercent)>=temp){
+        Math.abs(array[x].obamaPercent- array[x].romneyPercent)=temp;
+        let state=array[x].state;
     }
-    else if(Math.abs(array[x].obamapercent- array[x].romneypercent)<temp){
-      null
+    else if(Math.abs(array[x].obamaPercent- array[x].romneyPercent)<temp){
+      continue;
     }
   }
-return temp;
+return state;
+}
+
+//7th dash
+function voteDifference(array){
+    let temp= Math.abs(array[0].obamaVote- array[0].romneyVote);
+    let state= array[0].state;
+    for(let x=1; x<array.length; x++){
+      if(array[x].fips==0){
+        continue;
+      }
+      else if(Math.abs(array[x].obamaVote- array[x].romneyVote)>=temp){
+          Math.abs(array[x].obamaVote- array[x].romneyVote)=temp;
+          let state=array[x].state;
+      }
+      else if(Math.abs(array[x].obamaVote- array[x].romneyVote)<temp){
+        continue;
+      }
+    }
+  return state;
 }
