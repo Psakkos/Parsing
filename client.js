@@ -1,4 +1,21 @@
 const sort= Require('./sort.js');
+
+//1st dash
+function atLeast(array, number){
+  let state= ["AK", "AL", "AR", "AZ", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"];
+  let totals= new Array(50);
+  totals.fill(0);
+  for(let x=0; x<array.length; x++){
+    if(array[x].fips==0){
+      continue;
+    }
+    else if()
+  }
+}
+function atMost(array, number){}
+function exactly(array, number){}
+
+
 //2nd dash of readme
 function findStates(array){
     let states = [];
